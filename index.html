@@ -15,11 +15,24 @@
             <a href="about.html">About</a>
         </header>
         <main>
-            <p style="font-size:36px;">
+            <p style="font-size:24px;">
             $$
-                \begin{CD} S^{{\mathcal{W}}_\Lambda}\otimes T  @>j>> T\\
-                @VVV                            @VV{P}V\\
-                (S\otimes T)/I         @=      (Z\otimes T)/J
+                \def\diagUpArrow#1{\smash{
+                    \raise.6em\rlap{\scriptstyle #1}
+                    \lower.3em{\mathord{\diagup}}
+                    \raise.52em{\!\mathord{\nearrow}}
+                }}
+                \def\diagDownArrow#1{\smash{
+                    \raise.5em\rlap{\ \ \ \scriptstyle #1}
+                    \raise.3em{\mathord{\diagdown}}
+                    \lower.52em{\!\mathord{\searrow}}
+                }}
+                \begin{CD}
+                    {R} @> {f} >> {G_1} \\
+                    @V{g}VV @AA{\zeta}A \\
+                    {G_2} @>>{\tau}> {D_n} \\
+                    &&&  \diagDownArrow{\gamma} \\
+                    &&&& {M} 
                 \end{CD}
             $$
             blah blah math
