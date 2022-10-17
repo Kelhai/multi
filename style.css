@@ -1,0 +1,27 @@
+nav {
+    text-align: center;
+    border-style: double;
+    border-color: black;
+    border-width: 0%;
+    border-bottom-width: 2%;
+    padding: 1%;
+}
+.title {
+    text-align: center;
+    font-size: 250%;
+}
+.big-idea {
+    font-size: 175%;
+}
+.data {
+    font-size: large;
+}
+body {
+    background-color: peachpuff;
+}
+hr {
+    border-color: black;
+}
+.intro {
+    font-size: x-large;
+}
