@@ -13,6 +13,9 @@ nav {
 .big-idea {
     font-size: 175%;
 }
+.medium-idea {
+    font-size: 150%;
+}
 .idea {
     font-size: 125%;
 }
@@ -27,4 +30,11 @@ hr {
 }
 .intro {
     font-size: x-large;
+}
+li {
+    margin: 1%;
+}
+#cube {
+    height: 200px;
+    width: 200px;
 }

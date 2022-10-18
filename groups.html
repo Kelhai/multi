@@ -26,7 +26,7 @@
                 A set is a list of items, it can be ordered or unordered. There are a few ways to notate a set, one includes curly
                 braces. Anything in the set goes in the curly braces separated by commas, these are called the elements of the set.
                 <br><br>For example, $S = \{1,2,3,4,5\}$. A set is usually denoted by a capital letter. A set can hold anything, another example
-                of a set is $F$ where $F = \{\bigcirc, \Box, \bigtriangleup\}$. A set can even hold other sets, $\mathfrak{E} = \{ \{ A,B,C\}, \{ D,E,F\} \}$.
+                of a set is $F$ where $F = \{\bigcirc, \Box, \bigtriangleup\}$. A set can even hold other sets, $\mathfrak{E} = \{ \{ a,b,c\}, \{ d,e,f\} \}$.
             </p>
             <h3 class="idea">Set Operations</h3>
             <p class="data">
@@ -65,7 +65,85 @@
             <hr>
             <h2 class="big-idea">But what are groups?</h2>
             <p class="data">
-                this
+                Groups are a combination of a set and an operation (notated as an ordered pair) that satisfy 4 axioms. Let's consider the abstract
+                group and group operation, $(G, \circ)$. Note that $G$ can be any group and the $\circ$ operation is any operation that goes with $G$.
+                It is similar to a variable in that we have not defined it.
+                <ol class="medium-idea">
+                    <li>
+                        <em>Closure</em>: for any elements $a, b \in G$, $a \circ b\in G$. Using the group operation on any two
+                        elements in the group leads to a new element that is also in the group.
+                    </li>
+                    <li>
+                        <em>Associativity</em>: for any three elements, $a,b,c \in G$, $(a \circ b) \circ c=a \circ (b \circ c)$. The group operation is associative.
+                    </li>
+                    <li>
+                        <em>Identity</em>: there exists one and only one element $e \in G$ called the "identity" that satisfies the following
+                        property: for any element $a \in G$, $a \circ e=a$.
+                    </li>
+                    <li>
+                        <em>Inverse</em>: for any element $a \in G$, there exists one and only one other element $a^{-1} \in G$
+                        such that $a \circ a^{-1} = e$.
+                    </li>
+                </ol>
+            </p>
+            <p class="data">
+                Let's look at an example.
+                <br><br>
+                Consider $(\mathbb{Z}, +)$. Is the set of all integers a group with operation addition? Let's find out.
+                <br><br>
+                Well for the first axiom, any integer plus any other integer is an integer so that works.
+                <br>
+                For the second axiom, we can pick three integers, for example, $a=2,b=-5,c=10$ now we compute $(a+b)+c$ and $a+(b+c)$.
+                $(a+b)+c = (2 - 5) + 10 = -3 + 10 = 7$, and $a + (b + c) = 2 + (-5 + 10) = 2 + (5) = 7$. We now know that they are the same, therefore
+                addition among the integers is associative.
+                <br>
+                The third axiom is the identity element. In the case of the integers and addition, the identity is $0$. Any integer plus $0$ is the
+                integer itself.
+                <br>
+                The final axiom is the inverse element. Consider the integer $a$ with inverse $a'$, we know that $a + a' = 0$, therefore $a' = -a$.
+                So the inverse of any integer is its opposite.
+                <br><br>
+                The integers are a group over addition.
+            </p>
+            <hr>
+            <h2 class="big-idea">Significance</h2>
+            <p class="data">
+                There are many groups, some of which do not have numbers. For example, the group of symmetries of an equilateral triangle is a group.
+                Before we look at a more fun, real world example, let's prove one thing.
+                <br><br>
+                For a group, $(G, \circ)$, and elements, $a$ and $b$, the equation $a \circ x = b$ has a solution in $G$.
+                <br>
+                But how do we prove it?
+                <br><br>
+                $a \circ x = b \Rightarrow a^{-1} \circ (a \circ x) = a^{-1} \circ (b)$ and by axiom 2, we can rewrite this as
+                $(a^{-1} \circ a) \circ x = a^{-1} \circ b$ and by axiom 4, we can rewrite this as
+                $e \circ x = a^{-1} \circ b$ (where $e$ is the identity element) and by axiom 3, we can rewrite this as
+                $x = a^{-1} \circ b$.
+                <br><br>
+                Now this is only one example of many cool examples of the power of groups, but consider a Rubik's Cube.
+            </p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rubik%27s_cube.svg/480px-Rubik%27s_cube.svg.png?20170502121143" id="cube">
+            <p class="data">
+                A Rubik's Cube is a group with the operation of composition. The elemnts of the Rubik's Cube group are all the possible states of the
+                cube. That means that the group has approximately 43 quintillion elements. This is a special type of group as it can be
+                <em>generated</em> with only 6 of the states. That is, $\langle L, R, F, B, D, U \rangle$ is called the <em>generating set</em>
+                of the Rubik's Cube group as any element of the group can be made from a combination of the elements in the <em>generating set</em>.
+                <br><br>
+                But what is the operation? I mean I said that it is a composition but then I said that it is a combination, so what is it?
+                <br>
+                Well usually the operation is omitted from equations, for example, the state made by moving the front face clockwise then the
+                right face clockwise is notated as $FR$. The identity element is the solved state of the cube. Let's say that we have two elements
+                from the group (any two states of the cube), $\Omega$ and $\Theta$, the statement $\Omega\Theta$ is the same as the element that is 
+                made by doing the moves to get from the solved state to $\Omega$ and then doing the moves that it takes to get from the solved state
+                to $\Theta$.
+                <br><br>
+                Using our proof above and applying it here, we can say that for $\Omega x=\Theta$, $x$ is the move that it takes to get from $\Omega$
+                to $\Theta$. Using the solution, $x$ is $\Omega'\Theta$.
+                <br><br>
+                We can see that anything we prove for groups in general will work for every group. We have essentially abstracted away many of the 
+                specifics of many parts of math and allowed ourselves to think abstractly and do "multitask" with math.
+                <br>
+                Group theory has lots of power in higher math and the world itself.
             </p>
         </main>
         <footer>
